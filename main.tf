@@ -19,7 +19,7 @@ resource "docker_image" "nginx" {
 }
 
 resource "docker_container" "nginx" {
-  count = 0
+  count = 1
   image = docker_image.nginx.latest
   name  = "from-atlantis"
   ports {
