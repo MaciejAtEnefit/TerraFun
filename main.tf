@@ -1,11 +1,6 @@
 terraform {
-
-  cloud {
-    organization = "TurboMaciejsHashiCorpo"
-
-    workspaces {
-      name = "TurboWorkspaceish"
-    }
+  backend "local" {
+    path = "/terrafun/terraform.tfstate"
   }
 
   required_providers {
