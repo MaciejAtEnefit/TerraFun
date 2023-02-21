@@ -1,4 +1,13 @@
 terraform {
+
+  cloud {
+    organization = "TurboMaciejsHashiCorpo"
+
+    workspaces {
+      name = "TurboWorkspaceish"
+    }
+  }
+
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
