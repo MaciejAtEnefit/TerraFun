@@ -1,4 +1,8 @@
 terraform {
+  backend "local" {
+    path = "/terrafun/terraform.tfstate"
+  }
+
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
@@ -15,10 +19,11 @@ resource "docker_image" "nginx" {
 }
 
 resource "docker_container" "nginx" {
+  count = 1
   image = docker_image.nginx.latest
   name  = "from-atlantis"
   ports {
     internal = 80
-    external = 8080
+    external = 8020
   }
 }
