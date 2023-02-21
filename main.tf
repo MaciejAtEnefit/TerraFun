@@ -24,6 +24,6 @@ resource "docker_container" "nginx" {
   name  = "from-atlantis"
   ports {
     internal = 80
-    external = 8040
+    external = 8020
   }
 }
